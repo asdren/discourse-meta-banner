@@ -11,7 +11,7 @@ export default Component.extend({
     const isStartpage =  url === "/";
     const lowTrustLevel = currentUser && currentUser.trust_level < 2;
     // show banner only for anons and < TL 2
-    return !isStaff && (!currentUser || lowTrustLevel || isStartpage);
+    return !isStaff && (!currentUser || lowTrustLevel) && isStartpage;
   },
 
   @discourseComputed("router.currentRouteName", "router.currentURL")
