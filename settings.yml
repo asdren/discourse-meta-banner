@@ -1,7 +1,11 @@
-svg_icons:
-  default: "palette|fab-discourse"
-  type: "list"
-  list_type: "compact"
+show_for:
+  default: everyone
+  type: enum
+  choices:
+    - everyone
+    - logged_in
+    - logged_out
+
 show_on:
   default: top_menu
   type: enum
@@ -10,10 +14,8 @@ show_on:
     - homepage
     - all
   description: top_menu refers to the <a href="/admin/site_settings/category/all_results?filter=top_menu">top menu site setting</a>
-show_for:
-  default: everyone
-  type: enum
-  choices:
-    - everyone
-    - logged_in
-    - logged_out
+
+svg_icons:
+  default: "palette|fab-discourse"
+  type: "list"
+  list_type: "compact"
