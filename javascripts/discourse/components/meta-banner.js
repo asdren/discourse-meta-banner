@@ -17,4 +17,15 @@ export default Component.extend({
   discoveryRoute(currentRouteName, currentURL) {
     return currentRouteName.indexOf("discovery") > -1;
   },
+   displayForUser(currentUser) {
+    const showFor = settings.show_for;
+    if (showFor == "everyone") {
+      return true;
+    } else if (showFor == "logged_out" && !currentUser) {
+      return true;
+    } else if (showFor == "logged_in" && currentUser) {
+      return true;
+    }
+    return false;
+  },
 });
